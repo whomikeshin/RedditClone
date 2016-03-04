@@ -1,0 +1,12 @@
+<% url = @user.nil? ? users_url : session_url %>
+<%# byebug %>
+
+<form action="<%= url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="user_username">Username</label>
+    <input type="text" name="user[username]" value="" id = "user_username">
+
+  <label for="user_password">Password</label>
+    <input type="password" name="user[password]" value="" id = "user_password">
+  <input type="submit">
+</form>

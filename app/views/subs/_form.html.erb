@@ -1,0 +1,14 @@
+<% url = method.nil? ? subs_url : sub_url(subreddit) %>
+
+<form action="<%= url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <%= force_action(method) unless method.nil? %>
+  <label for="sub_title">Title</label>
+    <input type="text" name="sub[title]" value="" id = "sub_title">
+  <br>
+  <br>
+  <label for="sub_description">Description</label>
+  <br>
+    <input type="textarea" name="sub[description]" value="" id = "sub_description">
+  <input type="submit">
+</form>
